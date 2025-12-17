@@ -39,6 +39,15 @@ In a 4-bit synchronous DOWN counter using J-K flip-flops, all flip-flops share t
 A 4-bit synchronous down counter is a digital circuit that reduces its output value by one on every clock pulse. Based on the logic in the diagram, here are the key points to understand how it works: Synchronous Operation: Unlike ripple counters, all four flip-flops (DFF0–DFF3) are connected to the same common clock signal (clk). This ensures that all bits change state at exactly the same time, preventing timing glitches. The Decrement Logic: To count "down," the circuit uses the inverted outputs (usually labeled \bar{Q}) or specific logic gates (AND/XOR) to determine when the next bit should toggle. A bit toggles only when all the preceding bits (to its right) are 0. Example: To go from 1000 (8) to 0111 (7), the three lower bits must all flip because they were all zeros. Active-Low Reset (rstn): The "bubble" on the reset pin indicates it is active-low. When this signal drops to 0, the counter immediately forces the output to a starting state (usually 1111 or 15 in a down counter). Counting Range: Since it is a 4-bit counter, it has 2^4 = 16 possible states. It counts from 15 down to 0 (1111 \rightarrow 0000) and then "rolls over" back to 15 to start again. Output Bus: The output is shown as a single line with a diagonal slash and the number 4, signifying it is a 4-bit wide bus containing the values of all four flip-flops.
 
 ## Procedure:
+1.   Open Quartus Prime and create a new project for the synchronous counter design.
+
+2.   Write the Verilog HDL code for the 4-bit synchronous UP counter and DOWN counter using a common clock and reset.
+   
+3.   Compile the program and check for syntax errors and successful compilation.
+
+4.   Generate and verify the RTL schematic to confirm correct counter logic implementation.
+
+5.   Run the functional simulation, observe the timing diagrams, and verify correct up and down counting operation.
 
 ## PROGRAM:
 ### UP-COUNTER
